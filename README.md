@@ -5,3 +5,4 @@
 
 verify github webhook
 verify tomcat deployment webhook
+verify CICD
