@@ -23,6 +23,20 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepo</id>
+            <name>Internal Releases</name>
+            <url>http://localhost:8081/repository/DEVOPS-Release/</url>
+        </repository>
+         <snapshotRepository>
+            <id>deploymentRepo</id>
+            <name>Internal snapshot Releases</name>
+            <url>http://localhost:8081/repository/DEVOPS-SNAPSHOT/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
     <build>
         <pluginManagement>
             <plugins>
