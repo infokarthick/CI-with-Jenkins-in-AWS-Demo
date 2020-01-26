@@ -6,4 +6,4 @@
 verify github webhook
 verify tomcat deployment webhook
 verify CICD
-verify complete pipeline
+verify complete pipeline CICD, Email
