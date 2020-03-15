@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp2
+  name: webapp1
 spec:
   replicas: 3
   selector:
    matchLabels:
-    app: webapp2
+    app: webapp1
   template:
     metadata:
       labels:
-        app: webapp2
+        app: webapp1
     spec:
       containers:
-      - name: webapp2
-        image: gcr.io/secure-totality-266019/kubernetesrepos:tagversion
+      - name: webapp1
+        image: infokarthick/k8s:tagversion
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp2-svc
+  name: webapp1-svc
   labels:
-    app: webapp2
+    app: webapp1
 spec:
   type: LoadBalancer
   ports:
@@ -31,17 +31,4 @@ spec:
     port: 80
     targetPort: 8080
   selector:
-    app: webapp2
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: webapp2
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: webapp2
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 3
+    app: webapp1
