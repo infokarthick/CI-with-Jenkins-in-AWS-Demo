@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'devops-karthick'
 		CLUSTER_NAME = 'cluster-k8s'
 		LOCATION = 'us-central1-c'
-		CREDENTIALS_ID = 'k8s'
+		CREDENTIALS_ID = 'docker_infokarthick'
 	}
 	stages {
 		stage ("Checkout code") {
