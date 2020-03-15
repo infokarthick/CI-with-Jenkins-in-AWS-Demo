@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'devops-karthick'
 		CLUSTER_NAME = 'cluster-k8s'
 		LOCATION = 'us-central1-c'
-		CREDENTIALS_ID = 'docker_infokarthick'
+		CREDENTIALS_ID = 'kuberneteslogin'
 	}
 	stages {
 		stage ("Checkout code") {
@@ -34,7 +34,7 @@ pipeline {
 		stage ("Push image") {
 			steps {
 				script {
-					docker.withRegistry('https://registry.hub.docker.com', 'docker') {myapp.push("${env.BUILD_ID}")}
+					docker.withRegistry('https://registry.hub.docker.com', 'docker_infokarthick') {myapp.push("${env.BUILD_ID}")}
 				}
 			}
 		}
