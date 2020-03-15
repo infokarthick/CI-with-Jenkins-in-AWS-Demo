@@ -1,5 +1,6 @@
 pipeline {
-	agent any environment {
+	agent any 
+	environment {
 		PROJECT_ID = 'devops-karthick'
 		CLUSTER_NAME = 'cluster-k8s'
 		LOCATION = 'us-central1-c'
