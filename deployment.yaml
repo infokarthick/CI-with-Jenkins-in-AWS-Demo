@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp1
-        image: infokarthick/k8s:tagversion
+        image: infokarthick/kubernetesrepos:tagversion
         ports:
         - containerPort: 8080
 ---
